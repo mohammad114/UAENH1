@@ -110,6 +110,16 @@ end end end end
 
 -- -- -- -- -- -- -- -- -- --Check Files-- -- -- -- -- -- -- -- -- --
 
+DATA = io.open("/storage/emulated/0/Android/data/facr.dat", "rb")
+DATATWO = io.open("/storage/emulated/0/Android/data/jkr.dat", "rb")
+
+if DATA==nil or DATATWO==nil then
+gg.alert("Please Start The Antiban First :exclamation:\n\nلفتح السكربت قم بتشغيل الحماية اولاً السكربت خاص للمشتركين :exclamation:")
+os.exit()
+end
+
+local PKGNAME = DATA:read()
+local ANDID = DATATWO:read()
 
 
 -- -- -- -- -- -- -- -- -- --Check open-- -- -- -- -- -- -- -- -- -- --
