@@ -1379,43 +1379,44 @@ gg.toast("Small Crosshair Activated")
 end
 
 function gam2(...)
-JOK12 = gg.multiChoice({"💯    ثبات سلاح 100٪      💯","🔞         خلطه PUNISHER            🔞","🔥      هيدشوت 100٪       🔥","🎯       هيدشوت v2          🎯","💥          انستا هيد            💥","♨️         ايمبوت 50           ♨️","💣️⁩         ماجيك بولت         💣⁩️","🐇    تشغيل قفزه الارنب     🐇","🐰       ايقاف القفزه           🐰","⁦⁦ رجوع"}, nil, "╔─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪 ░░━━━━━━━━─╗\n                    \n                                      للتواصل : @nahyan_ab    \n╚─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪░░━━━━━━━━─╝")
-if JOK12 == nil then
+JOK13 = gg.multiChoice({"💯    ثبات سلاح 100٪      💯","🔞         خلطه PUNISHER            🔞","🔥      هيدشوت 100٪       🔥","🎯       هيدشوت v2          🎯","💥          انستا هيد            💥","♨️         ايمبوت 50           ♨️","💣️⁩         ماجيك بولت         💣⁩️","🐇    تشغيل قفزه الارنب     🐇","🐰       ايقاف القفزه           🐰","⁦⁦ رجوع"}, nil, "╔─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪 ░░━━━━━━━━─╗\n                    \n                                      للتواصل : @nahyan_ab    \n╚─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪░░━━━━━━━━─╝")
+if JOK13 == nil then
 else
-if JOK12[1] == true then
+if JOK13[1] == true then
 NOREC()
 end
-if JOK12[2] == true then
+if JOK13[2] == true then
 shot()
-PUNISHERv1()
+magicv1()
 end
-if JOK12[3] == true then
+if JOK13[3] == true then
 HS100()
 end
-if JOK12[4] == true then
+if JOK13[4] == true then
 HSHOT600()
 end
-if JOK12[5] == true then
+if JOK13[5] == true then
 instanthit()
 end
-if JOK12[6] == true then
+if JOK13[6] == true then
 aimbotv2()
 end
-if JOK12[7] == true then
-PUNISHERv1()
+if JOK13[7] == true then
+magicv1()
 end
-if JOK12[8] == true then
+if JOK13[8] == true then
 jumptojump()
 end
-if JOK12[9] == true then
+if JOK13[9] == true then
 jumptojump1()
 end
-if JOK12[10] == true then
+if JOK13[10] == true then
 HOME()
 end
 end
 PUBGMH = -1
 end
+
 
 function NOREC(...)
 gg.clearResults()
