@@ -36,18 +36,18 @@ function xgxc(szpy, qmxg)
   xgsl = xgsl + 1
  end
 end
-function xqmnb(CrAzY)
+function xqmnb(JoKer)
  gg.clearResults()
- gg.setRanges(CrAzY[1]["memory"])
- gg.searchNumber(CrAzY[3]["value"], CrAzY[3]["type"])
+ gg.setRanges(JoKer[1]["memory"])
+ gg.searchNumber(JoKer[3]["value"], JoKer[3]["type"])
  if gg.getResultCount() == 0 then
-  gg.toast(CrAzY[2]["name"] .. "فشل التفعيل")
+  gg.toast(JoKer[2]["name"] .. "فشل التفعيل")
  else
-  gg.refineNumber(CrAzY[3]["value"], CrAzY[3]["type"])
-  gg.refineNumber(CrAzY[3]["value"], CrAzY[3]["type"])
-  gg.refineNumber(CrAzY[3]["value"], CrAzY[3]["type"])
+  gg.refineNumber(JoKer[3]["value"], JoKer[3]["type"])
+  gg.refineNumber(JoKer[3]["value"], JoKer[3]["type"])
+  gg.refineNumber(JoKer[3]["value"], JoKer[3]["type"])
   if gg.getResultCount() == 0 then
-   gg.toast(CrAzY[2]["name"] .. "فشل التفعيل")
+   gg.toast(JoKer[2]["name"] .. "فشل التفعيل")
   else
    sl = gg.getResults(999999)
    sz = gg.getResultCount()
@@ -57,14 +57,14 @@ function xqmnb(CrAzY)
    end
    for i = 1, sz do
     pdsz = true
-    for v = 4, #(CrAzY) do
+    for v = 4, #(JoKer) do
      if pdsz == true then
       pysz = {}
       pysz[1] = {}
-      pysz[1].address = sl[i].address + CrAzY[v]["offset"]
-      pysz[1].flags = CrAzY[v]["type"]
+      pysz[1].address = sl[i].address + JoKer[v]["offset"]
+      pysz[1].flags = JoKer[v]["type"]
       szpy = gg.getValues(pysz)
-      pdpd = CrAzY[v]["lv"] .. ";" .. szpy[1].value
+      pdpd = JoKer[v]["lv"] .. ";" .. szpy[1].value
       szpd = split(pdpd, ";")
       tzszpd = szpd[1]
       pyszpd = szpd[2]
@@ -84,30 +84,18 @@ function xqmnb(CrAzY)
     end
    end
    if xgjg == true then
-    gg.toast(CrAzY[2]["name"] .. "Modified " .. xgsl .. " Values🔍")
+    gg.toast(JoKer[2]["name"] .. "Modified " .. xgsl .. " Values🔍")
    else
-    gg.toast(CrAzY[2]["name"] .. "فشل التفعيل")
+    gg.toast(JoKer[2]["name"] .. "فشل التفعيل")
    end
   end
  end
 end
 
-
-function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString)) break end nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len(szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, qmxg) for x = 1, #(qmxg) do xgpy = szpy + qmxg[x]["offset"] xglx = qmxg[x]["type"] xgsz = qmxg[x]["value"] gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) xgsl = xgsl + 1 end end function xqmnb(qmnb) gg.clearResults() gg.setRanges(qmnb[1]["memory"]) gg.searchNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "开启失败") else gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "开启失败") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(qmnb) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + qmnb[v]["offset"] pysz[1].flags = qmnb[v]["type"] szpy = gg.getValues(pysz) pdpd = qmnb[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, qmxg) xgjg = true end end if xgjg == true then gg.toast(qmnb[2]["name"] .. "开启成功,共修改" .. xgsl .. "条数据") else gg.toast(qmnb[2]["name"] .. "开启失败") end end end end
-
 function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find (szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len (szFullString)) break end nSplitArray[nSplitIndex] = string.sub (szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len (szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, qmxg) for x = 1, #(qmxg) do xgpy = szpy + qmxg[x]["offset"] xglx = qmxg[x]["type"] xgsz = qmxg[x]["value"] xgdj = qmxg[x]["freeze"] if xgdj == nil or xgdj == "" then gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) else gg.addListItems({[1] = {address = xgpy, flags = xglx, freeze = xgdj, value = xgsz}}) end xgsl = xgsl + 1 xgjg = true end end function xqmnb(qmnb) gg.clearResults() gg.setRanges(qmnb[1]["memory"]) gg.searchNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "开启失败") else gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "开启失败") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(qmnb) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + qmnb[v]["offset"] pysz[1].flags = qmnb[v]["type"] szpy = gg.getValues(pysz) pdpd = qmnb[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, qmxg) end end if xgjg == true then gg.toast(qmnb[2]["name"] .. "开启成功，一共修改" .. xgsl .. "条数据") else gg.toast(qmnb[2]["name"] .. "未搜索到数据，开启失败") end end end end function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) gg.toast("开启成功，一共修改"..#t.."条数据") gg.addListItems(t) else gg.toast("未搜索到数据，开启失败", false) return false end else gg.toast("Not Found") return false end end
-
-function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString)) break end nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len(szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, Loading1) for x = 1, #(Loading1) do xgpy = szpy + Loading1[x]["address"] xglx = Loading1[x]["flags"] xgsz = Loading1[x]["value"] xgdj = Loading1[x]["freeze"] if xgdj == nil or xgdj == "" then gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) else gg.addListItems({[1] = {address = xgpy, flags = xglx, freeze = xgdj, value = xgsz}}) end xgsl = xgsl + 1 xgjg = true end end function LoadingQ(Loading) gg.setRanges(Loading[1]["memory"]) gg.searchNumber(Loading[3]["value"], Loading[3]["flags"]) if gg.getResultCount() == 0 then gg.toast(Loading[2]["Projects"] .. "Load失败❌") else gg.refineNumber(Loading[3]["value"], Loading[3]["flags"]) gg.refineNumber(Loading[3]["value"], Loading[3]["flags"]) gg.refineNumber(Loading[3]["value"], Loading[3]["flags"]) if gg.getResultCount() == 0 then gg.toast(Loading[2]["Projects"] .. "Load失败❌") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(Loading) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + Loading[v]["address"] pysz[1].flags = Loading[v]["flags"] szpy = gg.getValues(pysz) pdpd = Loading[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, Loading1) end end if xgjg == true then 
-end end end end
 
 function edit(orig,ret)_om=orig[1].memory or orig[1][1]_ov=orig[3].value or orig[3][1]_on=orig[2].name or orig[2][1]
 gg.clearResults()gg.setRanges(_om)gg.searchNumber(_ov,orig[3].type or orig[3][2])sz=gg.getResultCount()if sz<1 then gg.toast(_on.." 开启失败")else sl=gg.getResults(50000)for i=1,sz do ist=true for v=4,#orig do if ist==true and sl[i].value==_ov then cd={{}}cd[1].address=sl[i].address+(orig[v].offset or orig[v][2])cd[1].flags=orig[v].type or orig[v][3]szpy=gg.getValues(cd)cdlv=orig[v].lv or orig[v][1]cdv=szpy[1].value if cdlv==cdv then pdjg=true ist=true else pdjg=false ist=false end end end if pdjg==true then szpy=sl[i].address for x=1,#(ret)do xgpy=szpy+(ret[x].offset or ret[x][2])xglx=ret[x].type or ret[x][3]xgsz=ret[x].value or ret[x][1]xgdj=ret[x].freeze or ret[x][4]xgsj={{address=xgpy,flags=xglx,value=xgsz}}if xgdj==true then xgsj[1].freeze=xgdj gg.addListItems(xgsj)else gg.setValues(xgsj)end end xgjg=true end end if xgjg==true then gg.toast(_on.." 开启成功")else gg.toast(_on.." 开启失败")end end end
-
-function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString)) break end nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len(szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, Loading1) for x = 1, #(Loading1) do xgpy = szpy + Loading1[x]["address"] xglx = Loading1[x]["flags"] xgsz = Loading1[x]["value"] xgdj = Loading1[x]["freeze"] if xgdj == nil or xgdj == "" then gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) else gg.addListItems({[1] = {address = xgpy, flags = xglx, freeze = xgdj, value = xgsz}}) end xgsl = xgsl + 1 xgjg = true end end function LoadingQ(Loading) gg.setRanges(Loading[1]["memory"]) gg.searchNumber(Loading[3]["value"], Loading[3]["flags"]) if gg.getResultCount() == 0 then gg.toast(Loading[2]["Projects"] .. "Load失败❌") else gg.refineNumber(Loading[3]["value"], Loading[3]["flags"]) gg.refineNumber(Loading[3]["value"], Loading[3]["flags"]) gg.refineNumber(Loading[3]["value"], Loading[3]["flags"]) if gg.getResultCount() == 0 then gg.toast(Loading[2]["Projects"] .. "Load失败❌") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(Loading) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + Loading[v]["address"] pysz[1].flags = Loading[v]["flags"] szpy = gg.getValues(pysz) pdpd = Loading[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, Loading1) end end if xgjg == true then
-end end end end
-
-
-
 -- -- -- -- -- -- -- -- -- --Check Files-- -- -- -- -- -- -- -- -- --
 
 DATA = io.open("/storage/emulated/0/Android/data/facr.dat", "rb")
@@ -1277,42 +1265,76 @@ end
 
 
 function HS50(...)
-gg.clearResults()
-qmnb = {
- {["memory"] = 32},
- {["name"] = "Headshot 50% Activated"},
- {["value"] = 30.5, ["type"] = 16},
- {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
- {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
- {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
-}
-qmxg = {
- {["value"] = 150, ["offset"] = 0, ["type"] = 16},
- {["value"] = 150, ["offset"] = -4, ["type"] = 16},
-}
-xqmnb(qmnb)
-gg.clearResults()
-gg.toast("PUNISHER")
+gg.clearResults() 
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP) 
+gg.searchNumber('"0.10000000149;64.50088500977"', gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1) 
+gg.refineNumber('"0.10000000149"', gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1) 
+gg.getResults(50) 
+gg.editAll("8", gg.TYPE_FLOAT) 
+gg.clearResults() 
+gg.clearResults() 
+gg.setRanges(gg.REGION_ANONYMOUS) 
+gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1) 
+gg.searchNumber("30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1) 
+gg.getResults(100) 
+gg.editAll("150", gg.TYPE_FLOAT) 
+gg.clearResults() 
+gg.clearResults() 
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP) 
+gg.searchNumber("-298284466;-1.304566e23F", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1) 
+gg.searchNumber("-298284466", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1) 
+gg.getResults(99) 
+gg.editAll("0", gg.TYPE_DWORD) 
+gg.clearResults() 
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)  
+gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)  
+gg.getResults(99) 
+gg.editAll("-1,883,348,485,055,444,540", gg.TYPE_QWORD) 
+gg.clearResults() 
+gg.toast("هيد شوت 50")
 end
 
 function HS75(...)
 gg.clearResults()
-qmnb = {
- {["memory"] = 32},
- {["name"] = "Headshot 75% Activated"},
- {["value"] = 30.5, ["type"] = 16},
- {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
- {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
- {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
-}
-qmxg = {
- {["value"] = 180, ["offset"] = 0, ["type"] = 16},
- {["value"] = 180, ["offset"] = -4, ["type"] = 16},
-}
-xqmnb(qmnb)
+gg.setRanges(gg.REGION_BAD)
+gg.searchNumber("-88.66608428955;26:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("26", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(92)
+gg.editAll("-89999960", gg.TYPE_FLOAT)
 gg.clearResults()
-gg.toast("PUNISHER ")
+gg.searchNumber("-88.73961639404;28:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(92)
+gg.editAll("-99999960", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("1;20.51941871643;2.04908943176;-86.45767974854;-92.2311706543;16.0", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("16", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(100)
+gg.editAll("75", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("9.20161819458;23;25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(100)
+gg.editAll("180", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("150;85;45;-129;-85", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("45", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(30)
+gg.editAll("99999", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(10)
+gg.editAll("200", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.toast("هيد شوت 75") 
 end
+
+
 
 function camera360on(...)
 gg.setRanges(gg.REGION_ANONYMOUS)
@@ -1503,25 +1525,25 @@ end
 function HS100(...)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-gg.searchNumber("0.10000000149;64.50088500977", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.refineNumber("0.10000000149", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("X_({12404,12402,12405,12404,12404,12404,12404,12404,12404,12404,12405,12408,12413,12415,12410,12408,12402,12409,12404,12404,12412,12412,12409,12404,12404,12413,12411,12411})", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("X_({12404,12402,12405,12404,12404,12404,12404,12404,12404,12404,12405,12408,12413})", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
 gg.getResults(50)
 gg.editAll("8", gg.TYPE_FLOAT)
 gg.clearResults()
 gg.clearResults()
-qmnb = {
- {["memory"] = 32},
- {["name"] = "Headshot 100% Activated"},
- {["value"] = 30.5, ["type"] = 16},
- {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
- {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
- {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
-}
-qmxg = {
- {["value"] = 250, ["offset"] = 0, ["type"] = 16},
- {["value"] = 250, ["offset"] = -4, ["type"] = 16},
-}
-xqmnb(qmnb)
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(100)
+gg.editAll("220", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.clearResults()
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
+gg.searchNumber("-298284466;-1.304566e23F", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("-298284466", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(99)
+gg.editAll("0", gg.TYPE_DWORD)
+gg.clearResults()
 gg.clearResults()
 gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
 gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
@@ -1649,14 +1671,14 @@ gg.clearResults()
 gg.toast(" ايم لوك ")
 end
 
-function PUNISHERv1(...)
+function magicv1(...)
 gg.clearResults()
 gg.setRanges(32)
 gg.searchNumber("69.5;35;33", 16, false, 536870912, 0, -1)
 gg.getResults(6)
 gg.editAll("200", 16)
 gg.clearResults()
-gg.toast("PUNISHER Bullet activated!")
+gg.toast("Magic Bullet activated!")
 end
 
 function jumptojump(...)
@@ -1753,32 +1775,22 @@ end
 
 function HS2000(...)
 gg.clearResults()
-gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-gg.searchNumber("0.10000000149;64.50088500977", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.refineNumber("0.10000000149", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(50)
-gg.editAll("8", gg.TYPE_FLOAT)
+gg.setRanges(gg.REGION_BAD)
+gg.searchNumber("-88.66608428955;26:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("26", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(2)
+gg.editAll("-460", gg.TYPE_FLOAT)
 gg.clearResults()
+gg.searchNumber("-88.73961639404;28:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(2)
+gg.editAll("-560", gg.TYPE_FLOAT)
 gg.clearResults()
-qmnb = {
- {["memory"] = 32},
- {["name"] = "Headshot 100% Activated"},
- {["value"] = 30.5, ["type"] = 16},
- {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
- {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
- {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
-}
-qmxg = {
- {["value"] = 250, ["offset"] = 0, ["type"] = 16},
- {["value"] = 250, ["offset"] = -4, ["type"] = 16},
-}
-xqmnb(qmnb)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(99)
-gg.editAll("-1,883,348,485,055,444,540", gg.TYPE_QWORD)
-gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(10)
+gg.editAll("250", gg.TYPE_FLOAT)
 gg.toast("ابو طلقه")
 end
 
@@ -2022,6 +2034,7 @@ gg.editAll("400000", gg.TYPE_FLOAT)
 gg.clearResults()
 gg.toast("M249")
 end
+
 
 function A90(...)
 gg.toast("")
