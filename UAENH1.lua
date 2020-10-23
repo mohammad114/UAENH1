@@ -894,35 +894,6 @@ gg.searchNumber('"117441793"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.getResults(11082001)
 gg.editAll("0", gg.TYPE_DWORD)
 gg.clearResults()
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("1.5584387e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("1.5584387e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("0", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("196,608;196,608;196,608;196,608;196,608;196,608;196,608;196,608;196,608;196,608;196,608;196,608:45",gg.TYPE_DWORD,false,gg.SIGN_EQUAL,0, -1)
-gg.searchNumber("196,608",gg.TYPE_DWORD,false,gg.SIGN_EQUAL,0, -1)
-gg.getResults(100)
-jg=gg.getResults(100)
-sl=gg.getResultCount()
-for i = 1, sl do
-dzy=jg[i].address
-gg.addListItems({[1] = {address = dzy,flags =gg.TYPE_DWORD,freeze = true,value = 110}})
-end
-gg.clearResults()
-gg.setRanges(gg.REGION_CODE_APP)
-gg.searchNumber("1.84059112e-35;1.84059112e-35;1.84059112e-35", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("1.84059112e-35", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-jg=gg.getResults(100)
-sl=gg.getResultCount()
-for i = 1, sl do
-dzy=jg[i].address
-gg.addListItems({[1] = {address = dzy,flags =gg.TYPE_DWORD,freeze = true,value = 110}})
-end
-gg.clearResults()
 os.remove("/storage/emulated/0/Android/data/com.tencent.ig/cache")
 os.remove("/storage/emulated/0/Android/data/com.tencent.ig/cache/GCloud.ini")
 os.remove("/storage/emulated/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/GameErrorNoRecords")
@@ -1256,94 +1227,89 @@ end
 
 
 function gam(...)
-JOK12 = gg.multiChoice({"🎯     هيدشوت 50٪    🎯","🎯   هيدشوت 75٪    🎯","➕     صليب صغير       ➕","🎥      منظور ايباد        🎥","🌲ازاله العشب + الاشجار🌱","⁦🌫️⁩      ازالة الضباب       ⁦🌫️⁩","🌌      سماء سوداء       🌌","🗼           انتينا            🗼","⁦⁦ رجوع "}, nil, "╔─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪 ░░━━━━━━━━─╗\n                    \n                                      للتواصل : @nahyan_ab    \n╚─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪░░━━━━━━━━─╝")
+JOK12 = gg.multiChoice({"🎯     طيران الاعب طول القيم    🎯","🎯     هيدشوت 50٪    🎯","🎯   هيدشوت 75٪    🎯","➕     صليب صغير       ➕","🎥      منظور ايباد        🎥","🌲ازاله العشب + الاشجار🌱","⁦🌫️⁩      ازالة الضباب       ⁦🌫️⁩","🌌      سماء سوداء       🌌","🗼           انتينا            🗼","⁦⁦ رجوع "}, nil, "╔─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪 ░░━━━━━━━━─╗\n                    \n                                      للتواصل : @nahyan_ab    \n╚─━━━━━━━━░░ 🇦🇪PUNISHER 🇦🇪░░━━━━━━━━─╝")
 if JOK12 == nil then
 else
 if JOK12[1] == true then
-HS50()
+FLYINGPLYR()
 end
 if JOK12[2] == true then
-HS75()
+HS50()
 end
 if JOK12[3] == true then
-puls()
+HS75()
 end
 if JOK12[4] == true then
-camera360on()
+puls()
 end
 if JOK12[5] == true then
-nogras()
+camera360on()
 end
 if JOK12[6] == true then
-nofog()
+nogras()
 end
 if JOK12[7] == true then
-blacksky()
+nofog()
 end
 if JOK12[8] == true then
-ANTENAL()
+blacksky()
 end
 if JOK12[9] == true then
+ANTENAL()
+end
+if JOK12[10] == true then
 HOME()
 end
 end
 PUBGMH = -1
 end
 
-function HS50(...)
+function FLYINGPLYR()
 gg.clearResults()
 gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("23;25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("120;150", gg.TYPE_FLOAT)
+gg.searchNumber("1024;3000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("1024;3000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("9999999", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.toast("Parachute Antifall Activated")
+end
+
+
+function HS50(...)
+gg.clearResults()
+qmnb = {
+ {["memory"] = 32},
+ {["name"] = "Headshot 50% Activated"},
+ {["value"] = 30.5, ["type"] = 16},
+ {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
+ {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
+ {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
+}
+qmxg = {
+ {["value"] = 150, ["offset"] = 0, ["type"] = 16},
+ {["value"] = 150, ["offset"] = -4, ["type"] = 16},
+}
+xqmnb(qmnb)
 gg.clearResults()
 gg.toast("PUNISHER")
 end
 
 function HS75(...)
 gg.clearResults()
-gg.setRanges(gg.REGION_BAD)
-gg.searchNumber("-88.66608428955;26:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("26", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(92)
-gg.editAll("-89999960", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.searchNumber("-88.73961639404;28:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(92)
-gg.editAll("-99999960", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("1;20.51941871643;2.04908943176;-86.45767974854;-92.2311706543;16.0", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("16", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("75", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("9.20161819458;23;25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("200", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_CODE_APP)
-gg.searchNumber("150;85;45;-129;-85", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("45", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(30)
-gg.editAll("999999", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(10)
-gg.editAll("290", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("10;45", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("10", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("9999", gg.TYPE_FLOAT)
+qmnb = {
+ {["memory"] = 32},
+ {["name"] = "Headshot 75% Activated"},
+ {["value"] = 30.5, ["type"] = 16},
+ {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
+ {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
+ {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
+}
+qmxg = {
+ {["value"] = 180, ["offset"] = 0, ["type"] = 16},
+ {["value"] = 180, ["offset"] = -4, ["type"] = 16},
+}
+xqmnb(qmnb)
 gg.clearResults()
 gg.toast("PUNISHER ")
 end
@@ -1536,25 +1502,25 @@ end
 function HS100(...)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-gg.searchNumber("X_({12404,12402,12405,12404,12404,12404,12404,12404,12404,12404,12405,12408,12413,12415,12410,12408,12402,12409,12404,12404,12412,12412,12409,12404,12404,12413,12411,12411})", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.refineNumber("X_({12404,12402,12405,12404,12404,12404,12404,12404,12404,12404,12405,12408,12413})", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("0.10000000149;64.50088500977", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("0.10000000149", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
 gg.getResults(50)
 gg.editAll("8", gg.TYPE_FLOAT)
 gg.clearResults()
 gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(100)
-gg.editAll("220", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.clearResults()
-gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-gg.searchNumber("-298284466;-1.304566e23F", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("-298284466", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(99)
-gg.editAll("0", gg.TYPE_DWORD)
-gg.clearResults()
+qmnb = {
+ {["memory"] = 32},
+ {["name"] = "Headshot 100% Activated"},
+ {["value"] = 30.5, ["type"] = 16},
+ {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
+ {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
+ {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
+}
+qmxg = {
+ {["value"] = 250, ["offset"] = 0, ["type"] = 16},
+ {["value"] = 250, ["offset"] = -4, ["type"] = 16},
+}
+xqmnb(qmnb)
 gg.clearResults()
 gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
 gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
@@ -1786,22 +1752,32 @@ end
 
 function HS2000(...)
 gg.clearResults()
-gg.setRanges(gg.REGION_BAD)
-gg.searchNumber("-88.66608428955;26:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("26", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(2)
-gg.editAll("-460", gg.TYPE_FLOAT)
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
+gg.searchNumber("0.10000000149;64.50088500977", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("0.10000000149", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(50)
+gg.editAll("8", gg.TYPE_FLOAT)
 gg.clearResults()
-gg.searchNumber("-88.73961639404;28:512", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(2)
-gg.editAll("-560", gg.TYPE_FLOAT)
 gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("9.201618;30.5;25", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("25;30.5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(10)
-gg.editAll("250", gg.TYPE_FLOAT)
+qmnb = {
+ {["memory"] = 32},
+ {["name"] = "Headshot 100% Activated"},
+ {["value"] = 30.5, ["type"] = 16},
+ {["lv"] = 23.0, ["offset"] = -8, ["type"] = 16},
+ {["lv"] = 25.0, ["offset"] = -4, ["type"] = 16},
+ {["lv"] = 0.0, ["offset"] = 4, ["type"] = 16},
+}
+qmxg = {
+ {["value"] = 250, ["offset"] = 0, ["type"] = 16},
+ {["value"] = 250, ["offset"] = -4, ["type"] = 16},
+}
+xqmnb(qmnb)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
+gg.searchNumber("-1,883,348,481,058,764,210", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(99)
+gg.editAll("-1,883,348,485,055,444,540", gg.TYPE_QWORD)
+gg.clearResults()
 gg.toast("ابو طلقه")
 end
 
