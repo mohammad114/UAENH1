@@ -1291,7 +1291,7 @@ for i, i in ipairs((gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)))
     i.freeze = true
   end
 end
-gg.alert(" تم كسر الحماية قم بتشغيل سكربت وثبات سلاح")
+gg.alert(" تم كسر الحماية قم")
 end
 
 
